@@ -30,7 +30,7 @@ body {
     padding: 0 15px; 
     color: #FF91A4; 
     text-decoration: none; 
-    font-size: 25px; 
+    font-size: 19px; 
 }
 
 .dropdown {
@@ -183,10 +183,11 @@ p {
 .footer {
     background-color:#9ee0fd;
     color: #FF91A4;
-    padding: 20px 0;
+    padding: 15px 30px;
     text-align: center;
     width: 100%;
     bottom: 0;
+
 }
 
 .container-footer {
