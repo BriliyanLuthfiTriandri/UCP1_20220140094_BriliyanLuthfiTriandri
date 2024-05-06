@@ -9,10 +9,10 @@ body {
 .teks-nav {
     color: #FF91A4;
     text-decoration: none;
-    font-size: 40px;
+    font-size: 30px;
     margin-right: 700px;
     margin-left: 40px;
-    padding: 15px;
+    padding: 30px;
 }
 
 .navbar {
@@ -30,7 +30,7 @@ body {
     padding: 0 15px; 
     color: #FF91A4; 
     text-decoration: none; 
-    font-size: 30px; 
+    font-size: 25px; 
 }
 
 .dropdown {
@@ -181,11 +181,11 @@ p {
 
 
 .footer {
-    position:relative;
     background-color:#9ee0fd;
     color: #FF91A4;
+    padding: 20px 0;
     text-align: center;
-    width:auto;
+    width: 100%;
     bottom: 0;
 }
 
