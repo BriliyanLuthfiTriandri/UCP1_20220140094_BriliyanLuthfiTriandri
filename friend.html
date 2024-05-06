@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas and Friends - Gordon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+  
+        .greetings {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .carousel-container {
+            width: 120%;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .card {
+            flex: 0 0 33.33%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        
+        .card img {
+            width: 321%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: black; 
+        }
+
+        .prev {
+            left: 0%; 
+        }
+
+        .next {
+            right: 4%; 
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <a class="teks-nav" href="index.html"><b>EVERYTHING ABOUT ME</b></a>
+        <a href="index.html" id="nav-work" class="nav-link active">
+            <b>Home</b>
+        </a>
+        <a href="character.html" id="nav-work" class="nav-link active">
+            <b>Characteristic</b>
+        </a>
+        <div class="dropdown">
+            <a href="#" id="nav-tugas" class="nav-link">
+                <b>More</b> <i class="fas fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+                <a href="intro.html"><b>Introduction</b></a>
+                <a href="friend.html"><b>Gordon's Friend</b></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="container">
+            <div class="text">
+                <p class="greetings" id="greetings"></p>
+                <p id="current-time"></p>
+                <div class="carousel-container">
+                    <buttonC class="prev" onclick="prevSlide()">&#10094;</buttonC>
+                    <div class="carousel">
+                        <div class="card">
+                            <img src="thomas.jpg" alt="Image 1">
+                        </div>
+                        <div class="card">
+                            <img src="percy.jpg" alt="Image 2">
+                        </div>
+                        <div class="card">
+                            <img src="gordon.jpg" alt="Image 3">
+                        </div>
+                    </div>
+                    <buttonC class="next" onclick="nextSlide()">&#10095;</buttonC>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container-footer">
+            <p><b>THANK YOU FOR VISITING</b></p>
+            <p><b>copyright &copy; 1991</b></p>
+        </div>
+    </footer>
+
+    <script>
+        function updateGreetings() {
+            var today = new Date();
+            var currentHour = today.getHours();
+            var greetingsElement = document.getElementById('greetings');
+            var currentTimeElement = document.getElementById('current-time');
+            var greetings = '';
+
+            if (currentHour < 12) {
+                greetings = 'Dont Forget to eat your Breakfast';
+            } else if (currentHour < 18) {
+                greetings = 'Have a Lunch';
+            } else if (currentHour < 20) {
+                greetings = 'Time to Rest';
+            } else {
+                greetings = 'Have a Nice Dream';
+            }
+
+            greetingsElement.innerText = greetings;
+            currentTimeElement.innerText = '' + today.toLocaleTimeString();
+        }
+
+        updateGreetings();
+        setInterval(updateGreetings, 1000);
+
+        var slideIndex = 0;
+
+        function showSlide() {
+            var slides = document.querySelectorAll('.card');
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            } else if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+
+        function nextSlide() {
+            slideIndex++;
+            showSlide();
+        }
+
+        function prevSlide() {
+            slideIndex--;
+            showSlide();
+        }
+
+        showSlide();
+    </script>
+</body>
+</html>

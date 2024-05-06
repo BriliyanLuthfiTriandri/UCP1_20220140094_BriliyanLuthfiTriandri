@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas and Friends - Gordon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        h1 {
+            font-size: 40px;
+            padding-top: 100px;
+            text-align: center;
+        }
+
+        .circle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .circle {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background-color: #9ee0fd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: #FF91A4;
+            margin: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .circle:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <a class="teks-nav" href="index.html"><b>EVERYTHING ABOUT ME</b></a>
+        <a href="index.html" id="nav-work" class="nav-link active">
+            <b>Home</b>
+        </a>
+        <a href="character.html" id="nav-work" class="nav-link active">
+            <b>Characteristic</b>
+        </a>
+        <div class="dropdown">
+            <a href="#" id="nav-tugas" class="nav-link">
+                <b>More</b> <i class="fas fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+                <a href="intro.html"><b>Introduction</b></a>
+                <a href="friend.html"><b>Gordon's Friend</b></a>
+            </div>
+        </div>
+    </header>
+
+    <h1><b>MY Characteristic</b></h1>
+    <script>
+        window.onload = function () {
+            var circles = document.getElementsByClassName('circle');
+
+            for (var i = 0; i < circles.length; i++) {
+                circles[i].addEventListener('click', function () {
+                    this.classList.add('animate');
+                    var circle = this;
+                    setTimeout(function () {
+                        circle.classList.remove('animate');
+                    }, 1000);
+                });
+            }
+        };
+    </script>
+    <div class="circle-container">
+        <div class="circle">
+            <p><span style="color: red;">&#10084;&#65039;</span><b>Forgiving</b> <span style="color: red;">&#10084;&#65039;</span></p>
+        </div>
+        <div class="circle">
+            <p><span style="color: red;">&#10084;&#65039;</span><b>Helpful</b><span style="color: red;">&#10084;&#65039;</span></p>
+        </div>
+        <div class="circle">
+            <p><span style="color: red;">&#10084;&#65039;</span><b>Friendly</b><span style="color: red;">&#10084;&#65039;</span></p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container-footer">
+            <p><b>THANK YOU FOR VISITING</b></p>
+            <p><b>copyright &copy; 1991</b></p>
+        </div>
+    </footer>
+</body>
+</html>
